@@ -7,10 +7,11 @@
     <groupId>ru.intf</groupId>
     <artifactId>app</artifactId>
     <version>1.0</version>
+    <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.jboss.bom>10.0.0.Final</version.jboss.bom>
+        <version.jboss.bom>10.1.0.Final</version.jboss.bom>
     </properties>
 
     <dependencyManagement>
@@ -81,6 +82,13 @@
                         <groupId>org.wildfly.plugins</groupId>
                         <artifactId>wildfly-maven-plugin</artifactId>
                         <version>1.2.0.Alpha4</version>
+                        <configuration>
+                            <hostname>127.0.0.1</hostname>
+                            <port>9990</port>
+                            <username>admin</username>
+                            <password>!Desinger79</password>
+                            <name>app</name>
+                        </configuration>
                         <executions>
                             <!-- Deploy the application on install -->
                             <execution>
@@ -125,7 +133,6 @@
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>
